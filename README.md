@@ -42,3 +42,59 @@ plugins:
       modules:
         - mkdocs_pluglet_file_include
 ```
+
+## Usage
+
+To include a portion of a file use
+
+```
+{{include_with_anchor('<file-name>', '<anchor name>')}}
+```
+
+## Example
+
+File with sections defined (use the ANCHOR and ANCHOR_END keyword)
+
+```
+$ cat inc.txt
+ANCHOR: begin
+1. Item 1
+2. Item 2
+# ANCHOR: a
+3. Item 3
+4. Item 4
+# ANCHOR_END: a
+# ANCHOR_END: begin
+```
+
+File that includes contenets between anchors.
+
+```
+cat included.txt
+
+Example: Include selected lines.
+
+{{include_with_anchor('inc.txt', 'a')}}
+
+Example: Include all lines.
+
+{{include_with_anchor('inc.txt', 'begin')}}
+
+```
+
+After running mkdocs build, the resulting page would look like
+
+```
+Example: Include selected lines.
+
+3. Item 3
+4. Item 4
+
+Example: Include all lines.
+
+1. Item 1
+2. Item 2
+3. Item 3
+4. Item 4
+
+```
