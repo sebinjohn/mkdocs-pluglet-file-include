@@ -67,16 +67,16 @@ ANCHOR: begin
 # ANCHOR_END: begin
 ```
 
-TO include just the contents between `ANCHOR: a` and `ANCHOR_END: a` in another file
+File that includes contenets between anchors.
 
 ```
 cat included.txt
 
-Below items numbers are interesting
+Example: Include selected lines.
 
 {{include_with_anchor('inc.txt', 'a')}}
 
-Full set of items are
+Example: Include all lines.
 
 {{include_with_anchor('inc.txt', 'begin')}}
 
@@ -85,12 +85,12 @@ Full set of items are
 After running mkdocs build, the resulting page would look like
 
 ```
-Below items numbers are interesting
+Example: Include selected lines.
 
 3. Item 3
 4. Item 4
 
-Full set of items are
+Example: Include all lines.
 
 1. Item 1
 2. Item 2
