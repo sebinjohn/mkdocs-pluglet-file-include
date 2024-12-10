@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='mkdocs-pluglet-file-include',
-    version='0.1.0',
+    version='0.1.1',
     description="include file contents using anchors",
     packages=['mkdocs_pluglet_file_include'],
     license='GPL3',

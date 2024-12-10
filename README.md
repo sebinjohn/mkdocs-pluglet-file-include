@@ -48,8 +48,12 @@ plugins:
 To include a portion of a file use
 
 ```
-{{include_with_anchor('<file-name>', '<anchor name>')}}
+{{include_with_anchor('<file-name>', '<anchor name>'[, strip_prefix='<optional prefix>'])}}
 ```
+
+> [!TIP]
+> `strip_prefix` is an optional parameter that can strip a prefix from each line of the resulting content. This is
+> useful if, for example, you have indented content that you wish to present unindented.
 
 ## Example
 
@@ -79,7 +83,6 @@ Example: Include selected lines.
 Example: Include all lines.
 
 {{include_with_anchor('inc.txt', 'begin')}}
-
 ```
 
 After running mkdocs build, the resulting page would look like
@@ -96,5 +99,4 @@ Example: Include all lines.
 2. Item 2
 3. Item 3
 4. Item 4
-
 ```
